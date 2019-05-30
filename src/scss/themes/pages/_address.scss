@@ -1,0 +1,17 @@
+.address {
+    @extend .moon-gradient;
+    @extend .text-center;
+    .jumbotron {
+        font-family: 'Montserrat', sans-serif;
+        @extend .font-weight-bold;
+        @extend .col-12;
+        @extend .text-white;
+        .date {
+            @extend .mb-4;
+            @extend .h2;
+        }
+    }
+    .images {
+        @extend .col-12;
+    }
+}

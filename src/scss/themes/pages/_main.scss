@@ -1,0 +1,53 @@
+.main {
+    @include media-breakpoint-down(md) {
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .row {
+            margin-right: 0;
+            margin-left: 0;
+            & > .col,
+            & > [class*="col-"] {
+              padding-right: 0;
+              padding-left: 0;
+            }
+        }
+    }
+    .row {
+        @extend .justify-content-center;
+    }
+    .title-page {
+        @extend .text-center;
+        @extend .col-12;
+        @extend .jumbotron;
+        @extend .my-4;
+    }
+    .table {
+        @extend .mb-5;
+        @extend .overflow-auto;
+        thead {
+            background-color: rgba($cyan, .2);
+        }
+        th, td {
+            vertical-align: middle;
+        }
+        .time {
+            @extend .text-nowrap;
+        }
+        dd {
+            @extend .mb-0;
+        }
+        tbody {
+            dd, .time {
+                @extend .font-italic;
+                // @extend .font-weight-light;
+                @extend .font-weight-normal;
+            }
+            dt {
+                font-weight: 500;
+                @extend .font-weight-bold;
+            }
+        }
+    }
+}
