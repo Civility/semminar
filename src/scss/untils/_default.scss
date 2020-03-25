@@ -1,0 +1,86 @@
+body {
+    text-rendering: optimizespeed;
+}
+.card-columns {
+	
+	@include media-breakpoint-up(sm) {
+	  column-count: $card-columns-count;
+	  column-gap: $card-columns-gap;
+	  orphans: 1;
+	  widows: 1;
+	}
+
+	@include media-breakpoint-down(md) { 
+		column-count: 1;
+    }
+  }
+
+.bg-img {
+	overflow: hidden;
+	@extend .position-relative;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+%block {
+	@extend .pb-5;
+}
+
+@each $blocks in banner, article, section, aside {
+	.#{$blocks}{
+		@extend %block;
+	}
+}
+
+%title {
+	@extend .text-center;
+	@extend .text-uppercase;
+}
+
+.header {
+	@extend %title;
+	@extend .display-2;
+}
+
+.title {
+	@extend %title;
+	@extend .h2;
+}
+
+.subtitle {
+	@extend .text-center;
+	@extend .lead;
+	@extend .d-block;
+}
+
+.table {
+    @extend .table-striped;
+}
+
+.img {
+	@extend .shadow;
+	@extend .img-fluid;
+}
+
+.timetable {
+    @extend .mb-5;
+}
+
+.btn_def {
+	@extend .btn;
+	@extend .btn-primary;
+}
+
+.error {
+	&__container {
+		@extend .text-center;
+	}
+	&__header {
+		@extend .my-4;
+	}
+	&__title {
+		@extend .mb-4;
+	}
+}

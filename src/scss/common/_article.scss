@@ -1,0 +1,21 @@
+.article {
+    @extend .pt-5;
+    &__text{
+        // @extend .card-columns;
+    }
+
+    &__banner {
+        @extend .bg-primary;
+        @extend .shadow;
+        @extend .text-white;
+        @extend .text-center;
+        @extend .display-4;
+        @extend .py-5;
+        // @extend .mt-3;
+        @extend .my-5;
+        &_text{
+            @extend .mb-auto;
+        }
+        
+    }
+}

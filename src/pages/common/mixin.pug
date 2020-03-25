@@ -1,0 +1,13 @@
+mixin mixin
+    .container
+        h2.title= title
+        .row.row-cols-1.row-cols-md-2
+            .col
+                include ./../includes/section/list.pug
+            .col
+                include ./../includes/section/timetable.pug
+    .row.section__row
+        .col
+            include ./../includes/section/img.pug
+        .col
+            include ./../includes/section/map.pug

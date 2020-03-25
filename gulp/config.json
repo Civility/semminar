@@ -1,0 +1,38 @@
+{
+	"baseDir": 		"./dest/",
+    "dest": {
+		"pug": 		"./dest/",
+		"script": 	"./dest/js/",
+		"scss": 	"./dest/css/",
+		"img": 		"./dest/img/",
+		"fonts":  	"./dest/fonts/",
+		"favicon": 	"./dest/img/favicons/",
+		"copy": 	"./dest/assets/"
+	},
+	"src": {
+		"pug": 		"./src/pages/*.pug",
+		"script": [
+			"./node_modules/jquery/dist/jquery.min.js",
+			"./src/js/main.js",
+			"./src/js/import/validator.min.js"
+		 ],
+		"scss": 	"./src/scss/*.scss",
+		"img": 		[
+			"!src/images/favicon/*.*",
+			"./src/images/**/*.{gif,png,jpg,svg,webp}"
+		],
+		"fonts": 	[
+			"./src/fonts/*",
+			"./node_modules/@fortawesome/fontawesome-free/webfonts/**/*"
+		],
+		"add": "./src/add/**/*",
+		"favicon": "./src/images/favicon/favicon.{jpg,jpeg,png,gif,tiff}",
+		"copy": "./src/assets/**/*"
+	},
+	"watch" : {
+		"pug": 		"./src/pages/**/*.pug",
+		"script": 	"./src/js/**/*.js",
+		"scss": 	"./src/scss/**/*.scss",
+		"img": 		"./src/images/*/*.{gif,png,jpg,svg,webp}"	
+	}
+}

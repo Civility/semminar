@@ -1,23 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:300i,400,500');
-@import 'bootstrap/bootstrap';
-@import 'themes/main';
-// @font-face {
-//   font-family: 'Roboto Light';
-//   src: url('../fonts/roboto_light/Roboto-Light.eot');
-//   src: url('../fonts/roboto_light/Roboto-Light.eot?iefix') format('eot'),
-//   url('../fonts/roboto_light/Roboto-Light.woff') format('woff'),
-//   url('../fonts/roboto_light/Roboto-Light.ttf') format('truetype');
-//   font-weight: $font-weight-light;
-//   font-style: normal;
-//   }  
-// @font-face {
-//   font-family: 'Roboto Regular';
-//   src: url('../fonts/roboto_regular/Roboto-Regular-webfont.eot');
-//   src: url('../fonts/roboto_regular/Roboto-Regular-webfont.eot?iefix') format('eot'),
-//   url('../fonts/roboto_regular/Roboto-Regular-webfont.woff2') format('woff2'),
-//   url('../fonts/roboto_regular/Roboto-Regular-webfont.woff') format('woff'),
-//   url('../fonts/roboto_regular/Roboto-Regular-webfont.ttf') format('truetype'),
-//   url('../fonts/roboto_regular/Roboto-Regular-webfont.svg#webfont') format('svg');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import "untils/bootstrap";
+@import "untils/default";
+// @import "untils/fontawesome";
+// @import "common/banner";
+@import "common/article";
+@import "common/section";
+@import "common/list";
+@import "common/aside";

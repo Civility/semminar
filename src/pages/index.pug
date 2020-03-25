@@ -1,0 +1,12 @@
+extends layout/layout
+block variables
+	- var headtitle = 'Приглашеине на семинар'
+block banner
+	.banner
+		include ./includes/banner.pug
+block main
+	main
+		include ./includes/article.pug
+		include ./includes/section.pug
+	include ./includes/aside.pug
+	include ./common/scripts.pug

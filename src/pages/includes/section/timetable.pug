@@ -1,0 +1,21 @@
+-
+    var arr = [
+        {'time': '09:30', 'event': 'Регистрация'},
+        {'time': '10:00', 'event': 'Тренинг по продажам'},
+        {'time': '11:00', 'event': 'Теоретическая часть'},
+        {'time': '12:00', 'event': 'Кофе-брейк 40 минут'},
+        {'time': '13:00', 'event': 'Практическая часть'},
+        {'time': '17:00 - 17:30', 'event': 'Окончание и фуршет'}
+    ];
+.timetable
+    strong.subtitle Расписание
+    table.table
+        thead
+            tr
+                th Время
+                th Событие
+        tbody
+        each val in arr
+            tr
+                td=val.time
+                td=val.event

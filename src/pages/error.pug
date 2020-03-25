@@ -1,0 +1,11 @@
+extends layout/layout
+block variables
+	- var headtitle = 'Страница не найдена'
+block banner
+	.error
+		.error__banner
+			include ./includes/banner.pug
+		.error__container.container
+			h1.error__header Страница не найдена
+			h3.error__title Ошибка <q>404</q>
+			a.btn_def(href="/" role="button") Вернуться на главную страницу

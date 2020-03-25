@@ -1,0 +1,7 @@
+.aside {
+    .checkbox {
+        @extend p;
+        @extend .font-weight-bold;
+        @extend .m-0;
+    }
+}

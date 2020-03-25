@@ -1,0 +1,15 @@
+.list {
+    @extend .text-center;
+    @extend .mb-5;
+    
+    &__deck {
+        @extend .mb-5;
+
+        &_title {
+            @extend .lead;
+        }
+        a {
+            @extend .text-reset;
+        }
+    }
+}

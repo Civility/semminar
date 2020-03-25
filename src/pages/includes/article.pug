@@ -1,0 +1,15 @@
+- var header = 'Обучающий семинар<br>и мастер-класс по монтажу<br><q>GERARD - КРОВЛЯ БЕЗ ЗАБОТ</q><br>с интеграцией мансардных окон velux';
+- var title = 'Уважаемые партнеры!';
+article.article
+    .article__desc
+        .container
+            .row
+                .col-auto.col-md-12
+                    h1.header!=header
+                    h3.title=title
+                    include ./article/text.pug
+    .article__banner
+        .container
+            .row
+                .col-auto.col-md-12
+                    include ./article/banner.pug

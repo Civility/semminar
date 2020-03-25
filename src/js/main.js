@@ -1,24 +1,22 @@
 'use strict'
-$(document).ready(function() {
-    // что бы правильно работал checkbox
-    $('#sovet').on('change', function(){
-        this.value = this.checked ? 'да' : 'нет';
-     }).change();
-     $('#prezent').on('change', function(){
-        this.value = this.checked ? 'да' : 'нет';
-     }).change();
+$(document).ready(function()  {
 
+      $('.list__btn').on("click", function(){
+        var $sss =  $(this).attr("value");
+        $('#citySeminar option[value='+$sss+']').prop('selected', true);
+      })
+      
     $('.checkbox').prop('indeterminate', true);
-    //отправка почты
+
     $('#agr').change(function() {
         if ($(this).prop('checked') == true) {
-        $('#contactForm button[type="submit"]').prop('disabled', false);
+            $('#regform button[type="submit"]').prop('disabled', false);
         } else {
-        $('#contactForm button[type="submit"]').prop('disabled', true);
+            $('#regform button[type="submit"]').prop('disabled', true);
         }
     });
-    
-    $("#contactForm").validator().on("submit", function (event) {
+
+    $("#regform").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
           submitMSG(false, "Вы правильно заполнили форму?");
         } else {
@@ -26,21 +24,18 @@ $(document).ready(function() {
             submitForm();
         }
     });
-    
+
     function submitForm(){
-        var name = $("#name").val(),
+        var citySeminar = $("#citySeminar").val(),
             firm = $("#firm").val(),
-            email = $("#email").val(),
+            occupation = $("#occupation").val(),
+            fio = $("#fio").val(),
             phone = $("#phone").val(),
-            message = $("#message").val(),
-            technol = $("#technol").val(),
-            sovet = $("#sovet").val(),
-            prezent = $("#prezent").val();
-    
+            city = $("#city").val();
         $.ajax({
             type: "POST",
-            url: "./form/send.php",
-            data: "name=" + name + "&firm=" + firm + "&phone=" + phone + "&email=" + email + "&technol=" + technol + "&message=" + message + "&sovet=" + sovet + "&prezent=" + prezent,
+            url: "./assets/send.php",
+            data: "fio=" + fio + "&firm=" + firm + "&phone=" + phone + "&occupation=" + occupation + "&citySeminar=" + citySeminar + "&city=" + city,
             success : function(text){
                 if (text == "success"){
                     formSuccess();
@@ -51,7 +46,7 @@ $(document).ready(function() {
         });
     }
     function formSuccess(){
-        $("#contactForm")[0].reset();
+        $("#regform")[0].reset();
         submitMSG(true, "Сообщение отправлено!")
     }
     function submitMSG(valid, msg){
@@ -62,23 +57,12 @@ $(document).ready(function() {
         }
         $("#msgSubmit").removeClass().addClass(msgClasses).text(msg).fadeOut(3500);
     }
-  $("#contactForm").submit(function() {
-    $.ajax({
-      type: "POST",
-      url: "form/mail.php",
-      data: $(this).serialize()
-    });
-    return false;
-  });
-
-    
-    $('.site a[href^="#"]').click( function(){
-        var scroll_el = $(this).attr('href');
-        if ($(scroll_el).length != 0) {
-            $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 700);
-        }
+    $("#regform").submit(function() {
+        $.ajax({
+          type: "POST",
+          url: "./assets/mail.php",
+          data: $(this).serialize()
+        });
         return false;
-    });
-
-
-});
+      });
+})

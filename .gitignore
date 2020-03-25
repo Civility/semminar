@@ -1,11 +1,13 @@
+# Файлы и папки операционной системы
 .DS_Store
 Thumbs.db
-Desktop.ini
-.git
-.txt
-.rar
-.pdf
-.zip
-old/
+# Файлы редактора
+.vscode
+# Вспомогательные файлы
+bower_components
 node_modules
+.log*
+.git
+# Папка с собранными файлами проекта
 dist
+

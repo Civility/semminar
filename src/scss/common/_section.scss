@@ -1,0 +1,29 @@
+.section {
+    &__row {
+        @extend .no-gutters;
+        @extend .row-cols-1;
+        @extend .row-cols-md-2;
+    }
+    &__img, &__map {
+        @extend .my-md-5;
+        @extend .my-3;
+        @extend .img;
+    }
+    
+    &__map {
+        overflow: hidden;
+    }
+
+    @each $picture in msk, spb {
+        .img_#{$picture} {
+            background-image: url('./../img/mini/#{$picture}.jpg');
+            @extend .bg-img;
+            height: 30rem;
+            @include media-breakpoint-up(md) {
+                height: 42.5rem;
+                background-image: url('./../img/#{$picture}.jpg');
+            }
+        }
+
+    }
+}

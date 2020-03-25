@@ -1,0 +1,15 @@
+.list
+    dl.list__deck
+        dt.list__deck_title Дата проведения:
+        dd.list__deck_value= date
+    dl.list__deck
+        dt.list__deck_title Место проведения:
+        dd.list__deck_value
+            != place
+    dl.list__deck
+        dt.list__deck_title Контактное лицо:
+        dd.list__deck_value
+            != name 
+            | 
+            a(href="tel:#{href}")=number
+    a.btn_def.list__btn(href="#regform" role="button" value=value) Форма для регистрации
